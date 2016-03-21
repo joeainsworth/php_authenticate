@@ -1,6 +1,7 @@
 <?php
 session_start();
 
+// This can be changed to use the new DEFINE
 $GLOBALS['config'] = [
     'mysql' => [
         'host' => '127.0.0.1',
@@ -19,7 +20,7 @@ $GLOBALS['config'] = [
 ];
 
 spl_autoload_register(function($class) {
-    require_once 'classes/' . $class . '.php';
+    require_once "classes/{$class}.php";
 });
 
 require_once 'functions/sanitize.php';

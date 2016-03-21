@@ -1,4 +1,6 @@
 <?php
 require_once 'core/init.php';
 
-echo Config::get('mysql/host');
+$user = Database::getInstance()->update('users', 4, array(
+    'name' => 'test name'
+));
